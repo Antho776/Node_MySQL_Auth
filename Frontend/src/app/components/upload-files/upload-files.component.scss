@@ -1,0 +1,86 @@
+// input {
+//   border: blue dotted 3px;
+//   margin-top: 4vh;
+//   margin-left: 5vw;
+//   width: 90vw;
+//   height: 25vh;
+//   background-color: #d9d9d9;
+// }
+
+.file-input{
+    display: none;
+  }
+  
+  // .upload-btn{
+  //   height: 10vh;
+  // }
+  
+  .attachment{
+    font-size: 1.4em;
+  }
+  
+  .select{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 20vh;
+    font-size:1.2rem;
+    font-weight: 500;
+    border: dotted 3px grey;
+    color: grey;
+  
+  }
+  
+  .selected-files{
+    margin-top: 2vh;
+    margin-left: 5vw;
+  }
+  
+  .selected-files h1{
+    text-align: center;
+    margin: 2rem;
+    font-size: 2rem;
+    font-family: 600;
+  }
+  
+  .table{
+    width: 70vw;
+    margin: auto;
+  }
+  
+  
+  
+  .upload{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 5vh;
+    font-size:1.2rem;
+    font-weight: 500;
+  }
+  
+  .uploading-files{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+  }
+  
+  .alert, .uploaded-list{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+  }
+  
+  
+  // .col-12 div{
+  //   position: absolute;
+  //   margin-top: 10vh;
+  //   margin: 10vh 20vw;
+  //   width: 60vw;
+  //   font-family: arial;
+  //   font-weight: bold;
+  //   font-size: 1.2rem;
+  //   color: white;
+  // }
+  
+  

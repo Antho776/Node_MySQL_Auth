@@ -21,6 +21,12 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { MultipleFileUploadComponent } from './components/multiple-file-upload/multiple-file-upload.component';
+import { DragAndDropComponent } from './components/drag-and-drop/drag-and-drop.component';
+import { DragDropFileUploadDirective } from './drag-drop-file-upload.directive';
+import { UploadFilesComponent } from './components/upload-files/upload-files.component';
+import { DropFileZoneDirective } from './drop-file-zone.directive';
 
 
 @NgModule({
@@ -31,7 +37,13 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     LoginComponent,
     HomeComponent,
     PostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    FileUploadComponent,
+    MultipleFileUploadComponent,
+    DragAndDropComponent,
+    DragDropFileUploadDirective,
+    UploadFilesComponent,
+    DropFileZoneDirective
   ],
   imports: [
     BrowserModule,

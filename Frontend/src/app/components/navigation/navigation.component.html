@@ -8,9 +8,30 @@
       <a
         *ngIf="isAuthenticated"
         routerLinkActive="active-link"
+        routerLink="/file-upload"
+      >
+        <span>Upload a file</span>
+      </a>
+      <a
+        *ngIf="isAuthenticated"
+        routerLinkActive="active-link"
+        routerLink="/multiple-file-upload"
+      >
+        <span>Upload multiple files</span>
+      </a>
+      <a
+        *ngIf="isAuthenticated"
+        routerLinkActive="active-link"
+        routerLink="/drag-and-drop"
+      >
+        <span>Drag and drop files</span>
+      </a>
+      <a
+        *ngIf="isAuthenticated"
+        routerLinkActive="active-link"
         routerLink="/posts"
       >
-        <span>New file upload</span>
+        <span>Posts</span>
       </a>
       <a
         *ngIf="!isAuthenticated"

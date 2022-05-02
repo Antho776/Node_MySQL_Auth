@@ -1,0 +1,77 @@
+<div >
+    <input type="file" multiple (change)="selectFiles($event)" class="file-input" #fileUpload/>
+  </div>
+  
+  <div>
+    <button appDropFileZone mat-mini-fab color="primary"
+    class="upload-btn select" (click)="fileUpload.click()"
+    (onDropFile)="handleDroppedFile($event)">
+      <mat-icon class="attachment">attach_file</mat-icon>
+      Cliquez ici ou glissez-déposez dans cette zone les fichiers à transmettre
+    </button>
+  </div>
+  
+  <div class="selected-files">
+    <h1  *ngIf="selectedFiles.length>0">Fichiers sélectionnés pour upload: </h1>
+    <table class="table table-striped"  *ngIf="selectedFiles.length>0">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Intitulé du fichier</th>
+          <th scope="col">Taille du fichier</th>
+          <th scope="col">Extension du fichier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let file of selectedFiles; let index = index">
+          <td>{{ index + 1 }}</td>
+          <td>{{ file.name }}</td>
+          <td>{{ (file.size /1024 /1024).toFixed(2) }} Mo</td>
+          <td>{{ file.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div>
+    <button  *ngIf="selectedFiles.length>0"
+      class="btn btn-success btn-sm upload"
+      [disabled]="!selectedFiles"
+      (click)="uploadFiles()">
+      Upload
+    </button>
+  </div>
+  
+  
+  <div *ngFor="let progressInfo of progressInfos" class="mb-2 uploading-files">
+    <span>{{ progressInfo.fileName }}</span>
+    <div class="progress">
+      <div
+        class="progress-bar progress-bar-info"
+        role="progressbar"
+        attr.aria-valuenow="{{ progressInfo.value }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: progressInfo.value + '%' }">
+        {{ progressInfo.value }}%
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="message.length" class="alert alert-danger my-3" role="alert">
+    <ul *ngFor="let msg of message; let i = index">
+      <li>{{ msg }}</li>
+    </ul>
+  </div>
+  
+  <div class="card mt-3 uploaded-list"  *ngIf="selectedFiles.length>0">
+    <div class="card-header">Liste des fichiers téléchargés</div>
+    <ul
+      class="list-group list-group-flush alert alert-success"
+      *ngFor="let file of fileInfos | async">
+      <li class="list-group-item">
+        <a href="{{ file.url }}">{{ file.name }}</a>
+      </li>
+    </ul>
+  </div>
+  
